@@ -1,0 +1,285 @@
+e	# Firefly III Main Dashboard - Detailed Requirements Specification
+
+## 1. Overview
+
+The main dashboard serves as the central hub for users' financial overview, providing a comprehensive at-a-glance view of their financial status, recent activities, and quick access to core functionality. This is the first page users see after successful authentication.
+
+## 2. Layout and Structure
+
+### 2.1 Page Header
+- **Title**: "Firefly III" with subtitle "What's playing?"
+- **Breadcrumb**: Single item "Home" indicating current location
+- **Welcome Message**: Contextual welcome text with embedded navigation links to key sections (Asset Accounts, Budgets, Reports)
+
+### 2.2 Three-Column Layout Structure
+- **Left Column**: Financial summary cards and navigation shortcuts
+- **Center Column**: Account details and recent transactions
+- **Right Column**: Sidebar with quick-create actions
+
+## 3. Top Financial Summary Cards
+
+### 3.1 Period Summary Card
+**Purpose**: Display current period financial activity overview
+**Requirements**:
+- **Header**: "In + out this period" (clickable link to detailed report)
+- **Primary Value**: Net financial change for current period (e.g., "-€1,165.87")
+- **Secondary Values**: Breakdown showing total expenses + total income (e.g., "-€1,243.64 + €77.77")
+- **Period Indication**: Current date range displayed in top navigation bar (e.g., "July 1st, 2025 - July 31st, 2025")
+- **Visual Indicators**: Color coding for positive/negative values
+- **Interactive**: Click to navigate to detailed financial report
+
+### 3.2 Subscriptions Card
+**Purpose**: Track recurring payment obligations
+**Requirements**:
+- **Header**: "Subscriptions to pay" (clickable link to subscriptions page)
+- **Primary Value**: Total outstanding subscription amount (e.g., "-€252.50")
+- **Paid Indicator**: Amount already paid in current period (e.g., "Paid: €21.11")
+- **Interactive**: Click to navigate to subscriptions management
+
+### 3.3 Budget Status Card
+**Purpose**: Display budget utilization and remaining funds
+**Requirements**:
+- **Header**: "Left to spend" (clickable link to budget page)
+- **Multi-Currency Support**: Display remaining amounts in multiple currencies (e.g., "€1,044.09, £200.00, $150.00")
+- **Daily Breakdown**: Per-day spending allowance calculation (e.g., "Per day: €41.76, £200.00, $150.00")
+- **Interactive**: Click to navigate to budget management
+- **Visual Indicators**: Progress or warning indicators for budget exhaustion
+
+### 3.4 Net Worth Card
+**Purpose**: Display total financial worth across all accounts
+**Requirements**:
+- **Header**: "Net worth" (clickable link to net worth report)
+- **Primary Value**: Total net worth calculation (e.g., "€3,204.82")
+- **Real-time**: Automatically calculated from all asset and liability accounts
+- **Interactive**: Click to navigate to detailed net worth report
+
+## 4. Main Content Section
+
+### 4.1 Navigation Shortcuts Section
+**Purpose**: Quick access to major financial modules
+**Layout**: Three-column grid with linked sections
+
+#### 4.1.1 Your Accounts Card
+- **Title**: "Your accounts" (clickable)
+- **Action Link**: "View your asset accounts" with icon
+- **Navigation**: Direct link to accounts overview page
+
+#### 4.1.2 Budgets and Spending Card
+- **Title**: "Budgets and spending" (clickable)
+- **Action Link**: "Go to your budgets" with icon
+- **Navigation**: Direct link to budget management page
+
+#### 4.1.3 Categories Card
+- **Title**: "Categories" (clickable)
+- **Action Link**: "Go to your categories" with icon
+- **Navigation**: Direct link to category management page
+
+### 4.2 Account Details Section
+**Purpose**: Display individual account information and recent activity
+**Layout**: Two-column layout showing primary accounts
+
+#### 4.2.1 Checking Account Panel
+**Requirements**:
+- **Account Header**: Account name "Checking Account" (clickable link to account details)
+- **Recent Transactions List**: 
+  - Display 10-12 most recent transactions
+  - Transaction format: Description with amount (e.g., "Drinks with friends -€37.38")
+  - Each transaction clickable to transaction details
+  - Support for complex transactions (split transactions, foreign currency)
+  - Positive transactions in green, negative in red/default
+- **Current Balance Display**: 
+  - Prominent balance display (e.g., "€404.82")
+  - Clickable link to full account view
+- **Quick Action**: "Create" button for new transactions
+
+#### 4.2.2 Savings Account Panel
+**Requirements**:
+- **Account Header**: Account name "Savings Account" (clickable)
+- **Recent Activity**: Limited transaction display (typically fewer than checking)
+- **Current Balance**: Prominent balance display (e.g., "€2,800.00")
+- **Quick Action**: "Create" button for new transactions
+
+#### 4.2.3 Multi-Currency Transaction Support
+**Requirements**:
+- Display transactions in multiple currencies
+- Show foreign currency equivalent in parentheses (e.g., "€22.33 (Ft 43.12)")
+- Support for split transactions with proper grouping and display
+
+### 4.3 Subscription Summary Panel
+**Requirements**:
+- **Section Title**: "Subscriptions" (clickable)
+- **Action Link**: "Go to your subscriptions" with icon
+- **Purpose**: Quick reminder of subscription management availability
+
+### 4.4 Savings Goals (Piggy Banks) Panel
+**Requirements**:
+- **Section Title**: "Piggy banks" (clickable)
+- **Goal List**: Display 3-4 active savings goals with:
+  - Goal name (e.g., "New couch", "New phone", "New camera")
+  - Progress bars showing completion percentage
+  - Current saved amount displayed on progress bar
+  - Visual progress indication (filled vs. remaining)
+- **Action Link**: "Go to your piggy banks" with icon
+
+## 5. Bottom Content Section
+
+### 5.1 Account Type Summaries
+**Purpose**: Links to different account category views
+
+#### 5.1.1 Expense Accounts
+- **Title**: "Expense accounts" (clickable)
+- **Action**: "See your expense accounts" link with icon
+
+#### 5.1.2 Revenue Accounts
+- **Title**: "Revenue accounts" (clickable)
+- **Action**: "See your revenue accounts" link with icon
+
+## 6. Right Sidebar - Quick Actions
+
+### 6.1 Create New Items Panel
+**Purpose**: Fast access to common data entry tasks
+**Requirements**:
+- **Section Title**: "Create new stuff"
+- **Action List**: Vertically stacked quick-create buttons:
+  - New withdrawal (expense transaction)
+  - New deposit (income transaction)
+  - New transfer (between accounts)
+  - New asset account
+  - New expense account
+  - New revenue account
+  - New liability
+  - New budget
+  - New category
+  - New piggy bank
+  - New subscription
+  - New rule (automation)
+  - New recurring transaction
+- **Visual Design**: Each item has icon and descriptive text
+- **Navigation**: Each item links directly to creation form
+
+## 7. Top Navigation Bar
+
+### 7.1 Application Header
+**Requirements**:
+- **Logo/Brand**: "FireflyIII" with "Firefly" in bold
+- **User Context**: Display current user email (e.g., "demo@firefly-iii.org")
+- **Period Selector**: Current date range with navigation (e.g., "July 1st, 2025 - July 31st, 2025")
+- **Utility Icons**: Settings and user menu access
+
+### 7.2 Search Functionality
+**Requirements**:
+- **Search Box**: "Search..." placeholder text
+- **Scope**: Global search across transactions, accounts, categories
+- **Access**: Prominent placement in sidebar
+
+## 8. Left Sidebar Navigation
+
+### 8.1 Module Navigation
+**Requirements**:
+- **Current Page Indicator**: "Dashboard" highlighted as active
+- **Module Categories**:
+  - Financial control (Budgets, Subscriptions, Piggy banks)
+  - Accounting (Transactions with submenu, Automation with submenu)
+  - Others (Accounts, Classification, Reports, Export data, Options)
+- **Expandable Menus**: Some items have submenus (Transactions, Automation, etc.)
+- **Icons**: Each navigation item has associated icon
+- **Logout**: Clearly marked logout option
+
+## 9. Responsive Design Requirements
+
+### 9.1 Desktop Layout (>1200px)
+- Three-column layout as described
+- Full sidebar navigation visible
+- All cards and panels displayed
+
+### 9.2 Tablet Layout (768px-1200px)
+- Responsive grid adjustment
+- Sidebar may collapse to icon-only
+- Cards may stack in fewer columns
+
+### 9.3 Mobile Layout (<768px)
+- Single column layout
+- Hamburger menu for navigation
+- Simplified card layout
+- Touch-optimized interactions
+
+## 10. Data Refresh and Real-time Updates
+
+### 10.1 Data Currency
+**Requirements**:
+- Balance calculations update when navigating back to dashboard
+- Period-based calculations refresh when date range changes
+- Cache management for performance while maintaining accuracy
+
+### 10.2 Performance Requirements
+- Initial page load <2 seconds
+- Smooth navigation between dashboard and other modules
+- Efficient data queries to support multiple accounts and currencies
+
+## 11. Multi-Currency Support
+
+### 11.1 Display Requirements
+- Support simultaneous display of EUR, GBP, USD, and other currencies
+- Clear currency indication for all monetary values
+- Proper formatting per currency locale
+- Exchange rate consideration for multi-currency accounts
+
+### 11.2 Calculation Requirements
+- Accurate conversion and aggregation across currencies
+- Historical exchange rate retention for reporting accuracy
+- User-configurable base currency for net worth calculations
+
+## 12. Accessibility Requirements
+
+### 12.1 Navigation
+- Keyboard navigation support for all interactive elements
+- Clear focus indicators
+- Logical tab order
+
+### 12.2 Screen Reader Support
+- Proper ARIA labels for interactive elements
+- Semantic HTML structure
+- Alternative text for icons and visual indicators
+
+### 12.3 Visual Accessibility
+- Sufficient color contrast for all text and elements
+- Support for high contrast modes
+- Scalable text and layout for zoom up to 200%
+
+## 13. Error Handling and Edge Cases
+
+### 13.1 No Data States
+- Graceful handling when accounts have no transactions
+- Appropriate messaging for empty piggy banks or budgets
+- Clear calls-to-action for getting started
+
+### 13.2 Network Issues
+- Offline capability indication
+- Graceful degradation when data cannot be loaded
+- User feedback for sync status
+
+## 14. Security and Privacy
+
+### 14.1 Data Protection
+- Session timeout handling
+- Automatic logout for inactivity
+- Secure handling of financial data display
+
+### 14.2 User Context
+- Clear indication of logged-in user
+- Account-specific data isolation
+- Secure navigation between modules
+
+## 15. Integration Points
+
+### 15.1 Module Interconnections
+- Seamless navigation to related modules (budgets, accounts, reports)
+- Consistent data representation across modules
+- Shared components and design patterns
+
+### 15.2 Reporting Integration
+- Dashboard metrics link to detailed reports
+- Period-consistent calculations across dashboard and reports
+- Export capabilities from dashboard views
+
+This specification provides the foundation for implementing a comprehensive, user-friendly financial dashboard that serves as the central hub for personal finance management in Firefly III.
