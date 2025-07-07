@@ -5,7 +5,7 @@ interface NavigationCardProps {
   title: string;
   actionText: string;
   icon: 'accounts' | 'budgets' | 'categories';
-  href: string;
+  href?: string;
 }
 
 const iconMap = {
@@ -14,7 +14,7 @@ const iconMap = {
   categories: Tag
 };
 
-const NavigationCard: React.FC<NavigationCardProps> = ({ title, actionText, icon, href }) => {
+const NavigationCard: React.FC<NavigationCardProps> = ({ title, actionText, icon }) => {
   const Icon = iconMap[icon];
 
   return (

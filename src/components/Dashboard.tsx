@@ -1,5 +1,4 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
 import SummaryCard from './SummaryCard';
 import AccountCard from './AccountCard';
 import PiggyBankCard from './PiggyBankCard';

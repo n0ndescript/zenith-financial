@@ -5,10 +5,10 @@ interface SimpleCardProps {
   title: string;
   actionText: string;
   description?: string;
-  href: string;
+  href?: string;
 }
 
-const SimpleCard: React.FC<SimpleCardProps> = ({ title, actionText, description, href }) => {
+const SimpleCard: React.FC<SimpleCardProps> = ({ title, actionText, description }) => {
   return (
     <div className="bg-dark-800 rounded-lg border border-dark-700 p-6 hover:border-dark-600 transition-colors">
       <h3 className="text-lg font-semibold text-white mb-4 flex items-center">

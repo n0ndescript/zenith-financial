@@ -1,7 +1,7 @@
 import React from 'react';
 import { Plus, ExternalLink } from 'lucide-react';
 import { Account, Transaction } from '../types';
-import { formatCurrency, formatDateShort } from '../utils/formatters';
+import { formatCurrency } from '../utils/formatters';
 
 interface AccountCardProps {
   account: Account;
